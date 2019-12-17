@@ -2,11 +2,10 @@ from django.db import models
 
 # Create your models here.
 class Upload(models.Model):
-    title = models.CharField()
+    title = models.CharField(max_length = 30)
     description = models.TextField()
-    location = models.ForeignKey(Pin)
-    category = models.ForeignKey(Section)
-    mboto = models.ImageField(upload_to='photo_storage/', blank=True)
+    
+    mboto = models.ImageField(upload_to='upload_storage/', blank=True)
 
     def __str__(self):
         return self.title
@@ -14,8 +13,8 @@ class Upload(models.Model):
     def save_upload(self):
         self.save()
 
-class Pin(models.Model):
-    name = models.CharField()
+class pin (models.Model):
+    pin_name = models.CharField(max_length = 30)
 
     def __str__(self):
         return self.name
@@ -23,8 +22,8 @@ class Pin(models.Model):
     def save_pin(self):
         self.save()
 
-class Section(models.Model):
-    name = models.CharField()
+class section(models.Model):
+    section_name = models.CharField(max_length = 30)
 
     def __str__(self):
         return self.name
