@@ -4,7 +4,7 @@ from django.db import models
 class Upload(models.Model):
     title = models.CharField(max_length = 30)
     description = models.TextField()
-    
+
     mboto = models.ImageField(upload_to='upload_storage/', blank=True)
 
     def __str__(self):
@@ -17,7 +17,7 @@ class pin (models.Model):
     pin_name = models.CharField(max_length = 30)
 
     def __str__(self):
-        return self.name
+        return self.pin_name
 
     def save_pin(self):
         self.save()
@@ -26,7 +26,7 @@ class section(models.Model):
     section_name = models.CharField(max_length = 30)
 
     def __str__(self):
-        return self.name
+        return self.section_name
 
     def save_section(self):
         self.save()
