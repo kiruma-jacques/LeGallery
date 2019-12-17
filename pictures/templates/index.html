@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="text-center" >I need to get this right!</h1>
+{% for picha in picha %}
+<h1 class="text-center" >{{picha.title}}</h1>
+<img src="{{picha.mboto.url}}" class="img-fluid" alt="image">
+{% endfor %}
 {% endblock %}
