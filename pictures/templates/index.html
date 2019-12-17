@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for picha in picha %}
-<h1 class="text-center" >{{picha.title}}</h1>
-<img src="{{picha.mboto.url}}" class="img-fluid" alt="image">
-{% endfor %}
-{% endblock %}
+<div class="container">
+  {% for pich in picha %}
+  <div class="card m-2">
+    <div class="card-body">
+      <img src="{{pich.mboto.url}}" class="card-img-top" alt="image">
+      <hr>
+      <h4>{{pich.title}}</h4>
+      <p>{{pich.description}}</p>
+      <p>{{pich.location}}</p>
+      <p>{{pich.category}}</p>
+    </div>
+  </div>
+
+  {% endfor %}
+  {% endblock %}
+
+</div>
