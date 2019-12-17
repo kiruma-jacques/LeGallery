@@ -4,7 +4,8 @@ from django.db import models
 class Upload(models.Model):
     title = models.CharField(max_length = 30)
     description = models.TextField()
-
+    location = models.ForeignKey('pin')
+    category = models.ForeignKey('section')
     mboto = models.ImageField(upload_to='upload_storage/', blank=True)
 
     def __str__(self):
@@ -22,7 +23,7 @@ class pin (models.Model):
     def save_pin(self):
         self.save()
 
-class section(models.Model):
+class Section(models.Model):
     section_name = models.CharField(max_length = 30)
 
     def __str__(self):
