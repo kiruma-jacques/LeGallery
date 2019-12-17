@@ -7,14 +7,14 @@
       <img src="{{pich.mboto.url}}" class="card-img-top" alt="image">
       <hr>
       <h4>{{pich.title}}</h4>
-      <p>{{pich.category}}</p>
-      <a type="button" class="btn btn-primary" data-toggle="modal" href="#{{pich.category}}">
+      <p>category:{{ pich.category}}</p>
+      <a type="button" class="btn btn-primary" data-toggle="modal" href="#{{pich.name}}">
         Details
       </a>
     </div>
   </div>
 
-  <div class="modal fade" id="{{pich.category}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="{{pich.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -25,7 +25,8 @@
         </div>
         <div class="modal-body">
           <p>{{pich.description}}</p>
-          <p>{{pich.location}}</p>
+          <hr>
+          <p>location: {{pich.location}}</p>
         </div>
       </div>
     </div>

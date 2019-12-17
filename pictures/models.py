@@ -10,6 +10,10 @@ class pin (models.Model):
     def save_pin(self):
         self.save()
 
+    @classmethod
+    def filter_by_pin(cls):
+        return cls.objects.all()
+
 class Section(models.Model):
     section_name = models.CharField(max_length = 30, null=True, default=0)
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Upload, Section
+from .models import Upload, Section, pin
 # Create your views here.
 
 def index(request):
@@ -17,6 +17,6 @@ def search_result(request):
         message = 'You have not specified anything'
         return render(request, 'search.html', {"message":message})
 
-def all_category(request):
-    category=Section.get_all_sections()
-    return render(request, 'footer.html', {"categorys":category})
+def filter_location(request):
+    items = pin.filter_by_pin()
+    return render(request, 'footer.html', {"items":item})
