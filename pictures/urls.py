@@ -5,7 +5,8 @@ from django.conf.urls import url
 
 urlpatterns = [
     url('^$', views.index, name='home'),
-    url('^search/', views.search_result, name='search_result')
+    url('^search/', views.search_result, name='search_result'),
+    url('^', views.filter_location, name='locate')
 ]
 
 if settings.DEBUG:

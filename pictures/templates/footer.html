@@ -26,11 +26,13 @@
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Location</h5>
 
         <ul class="list-unstyled">
+          {% block content %}
           {% for item in items %}
           <li>
             <a href="{% url 'home' %}">{{item.pin_name}}</a>
           </li>
           {% endfor %}
+          {% endblock %}
 
           <li>
             <a href="{% url 'home' %}">Fiction</a>
