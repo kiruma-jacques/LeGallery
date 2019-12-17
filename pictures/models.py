@@ -18,6 +18,10 @@ class Upload(models.Model):
     def get_all_upload(cls):
         return cls.objects.all()
 
+    @classmethod
+    def locate_image(cls, search_term):
+        return cls.objects.filter(location__icontains=search_term)
+
 class pin (models.Model):
     pin_name = models.CharField(max_length = 30, null=True, default=0)
 
