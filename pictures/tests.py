@@ -25,5 +25,5 @@ class SectionTestClass(TestCase):
         self.assertTrue(isinstance(self.newsection, Section))
 
     def test_get_all_section(self):
-        sectiond = Section.get_all_sections()
+        sectiond= Section.get_all_sections()
         self.assertTrue(len(sectiond) == 1)
