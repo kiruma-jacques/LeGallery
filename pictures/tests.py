@@ -41,4 +41,11 @@ class UploadTestClass(TestCase):
         self.assertTrue(self.newupload, Upload)
 
     def test_upload_save(self):
-        pass
+        self.newpintest=pin(pin_name = 'states 1')
+        self.newpintest.save_pin()
+        self.newsectiontest = Section(section_name = 'Tech 1')
+        self.newsectiontest.save_section()
+        self.newtest = Upload (title='test1', name='nameth1', description='testing model 1', location=self.newpintest, category=self.newsectiontest)
+        self.newtest.save_upload()
+        uploads = Upload.get_all_upload()
+        self.assertTrue(len(uploads) == 2 )
