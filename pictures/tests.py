@@ -10,3 +10,7 @@ class PinTestClass(TestCase):
 
     def test_pin_instance(self):
         self.assertTrue(isinstance(self.newpin, pin))
+
+    def test_filter_pin(self):
+        pins=pin.filter_by_pin()
+        self.assertTrue(len(pins) > 0)
