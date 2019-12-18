@@ -1,1 +1,1 @@
-web: gunicorn mbotos.wsgi --log-file -
+web: gunicorn gallery.wsgi --log-file -
