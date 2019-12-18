@@ -18,8 +18,12 @@ class PinTestClass(TestCase):
 class SectionTestClass(TestCase):
     def setUp(self):
         self.newsection = Section(section_name = 'Tech')
-        
+
         self.newsection.save_section()
 
     def test_section_instance(self):
         self.assertTrue(isinstance(self.newsection, Section))
+
+    def test_get_all_section(self):
+        sectiond = Section.get_all_sections()
+        self.assertTrue(len(sectiond) == 1)
