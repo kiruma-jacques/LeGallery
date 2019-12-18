@@ -14,3 +14,12 @@ class PinTestClass(TestCase):
     def test_filter_pin(self):
         pins=pin.filter_by_pin()
         self.assertTrue(len(pins) > 0)
+
+class SectionTestClass(TestCase):
+    def setUp(self):
+        self.newsection = Section(section_name = 'Tech')
+        
+        self.newsection.save_section()
+
+    def test_section_instance(self):
+        self.assertTrue(isinstance(self.newsection, Section))
