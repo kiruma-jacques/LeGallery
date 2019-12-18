@@ -27,3 +27,15 @@ class SectionTestClass(TestCase):
     def test_get_all_section(self):
         sectiond= Section.get_all_sections()
         self.assertTrue(len(sectiond) == 1)
+
+class UploadTestClass(TestCase):
+    def setUp(self):
+        self.newpin=pin(pin_name = 'states')
+        self.newpin.save_pin()
+        self.newsection = Section(section_name = 'Tech')
+        self.newsection.save_section()
+        self.newupload = Upload (title='test', name='nameth', description='testing model', location=self.newpin, category=self.newsection)
+        self.newupload.save_upload()
+
+    def test_upload_instance(self):
+        pass
