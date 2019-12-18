@@ -38,4 +38,4 @@ class UploadTestClass(TestCase):
         self.newupload.save_upload()
 
     def test_upload_instance(self):
-        pass
+        self.assertTrue(self.newupload, Upload)
